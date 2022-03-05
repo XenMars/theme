@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  width: 100%;
+
+  color: $color-text;
+  background-color: $color-white;
+  box-shadow: 0 2px 8px -2px rgba($color-black, .25);
+
+  transform: translateY(-1px);
+  outline: solid 1px $color-white;
+
+  will-change: transform;
+
+  .header__inner {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    width: 100%;
+    height: 3.75rem;
+    max-width: $width-site;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    transform: translate3d(0, 0, 0);
+  }
+
+  .header__logo {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $color-white;
+
+    .header__logo-link {
+      display: block;
+    }
+
+    .header__logo-image {
+      display: block;
+
+      width: 6.25rem;
+      height: 1.875rem;
+
+      @media screen and (max-width: 1023px) {
+        width: 5rem;
+        height: 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 14;
+
+      width: 100%;
+      height: 100%;
+      padding: 0 3.25rem;
+    }
+  }
+
+  .header__navbar {
+    z-index: 13;
+    outline: none;
+  }
+
+  .header__button {
+    position: relative;
+    z-index: 15;
+    outline: none;
+    cursor: pointer;
+
+    &.header__button--menu {
+      display: none;
+
+      height: 1.25rem;
+      width: 1.375rem;
+
+      @media screen and (max-width: 1023px) {
+        display: block;
+      }
+
+      @media screen and (max-width: 767px) {
+        height: 1rem;
+        width: 1.25rem;
+      }
+    }
+
+    &.header__button--search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 1.375rem;
+      width: 1.375rem;
+      font-size: 1rem;
+      line-height: 1;
+      color: $color-black;
+
+      .is-search & {
+        pointer-events: none;
+        cursor: default;
+
+        color: rgba($color-text, .5);
+      }
+
+      @media screen and (max-width: 1023px) {
+        font-size: 1.375rem;
+      }
+
+      @media screen and (max-width: 767px) {
+        height: 1.25rem;
+        width: 1.25rem;
+
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    height: 3.25rem;
+  }
+}

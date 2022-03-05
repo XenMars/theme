@@ -1,0 +1,19 @@
+.widget-adfox {
+  display: none;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: relative;
+
+  &.widget-adfox--sidebar {
+    flex: 20 1 auto;
+    margin-top: 1rem;
+
+    &.widget-adfox--loaded > div {
+      @include sticky-widget;
+    }
+  }
+
+  &.widget-adfox--loaded {
+    display: flex;
+  }
+}

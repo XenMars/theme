@@ -1,0 +1,137 @@
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+
+  width: calc(100% - 2rem);
+  max-width: $width-site - 2rem;
+  margin: 2rem auto 0;
+  padding: 2rem 0;
+
+  .footer__copy {
+    display: block;
+
+    width: 50%;
+    padding-right: 0;
+
+    margin-bottom: 0;
+
+    line-height: 1.4;
+    font-size: .8125rem;
+    letter-spacing: .5px;
+
+    p {
+      margin-bottom: .5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: $color-light;
+
+      &:hover {
+        filter: brightness(120%);
+      }
+    }
+
+    @media screen and (max-width:1023px) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .footer__logo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
+    width: 25%;
+    padding-right: 1rem;
+
+    .footer__logo-desc {
+      display: block;
+      cursor: default;
+
+      max-width: 15rem;
+      padding-top: 1rem;
+      line-height: 1.4;
+      font-size: .8125rem;
+      letter-spacing: .5px;
+    }
+
+    .footer__logo-link {
+      display: block;
+      align-self: flex-start;
+    }
+
+    .footer__logo-image {
+      display: block;
+
+      width: 6.25rem;
+      height: 1.875rem;
+    }
+
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  .footer__menu {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    width: 25%;
+    padding-right: 1rem;
+
+    .footer__menu-pages {
+      display: flex;
+
+      .menu {
+        flex-flow: column;
+        align-items: flex-start;
+
+        .menu__item {
+          font-size: 1rem;
+          margin: .125rem 0;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        .menu__item-link {
+          padding: 0;
+        }
+      }
+
+      @media screen and (max-width: 1023px) {
+        display: none;
+      }
+    }
+
+    .footer__menu-social {
+      display: flex;
+      margin: 1rem 0 0;
+
+      .social__item:first-child {
+        margin-left: 0;
+      }
+
+      @media screen and (max-width: 1023px) {
+        justify-content: center;
+        margin: 0 0 2rem;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    max-width: $width-content;
+    margin: 2rem auto 0;
+  }
+}

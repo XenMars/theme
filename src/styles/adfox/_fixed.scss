@@ -1,0 +1,54 @@
+.adfox-fixed {
+  display: block;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  z-index: 5;
+
+  max-width: 95%;
+  transform: translateX(-50%);
+
+  .adfox-fixed__link {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    &:hover {
+      filter: brightness(110%);
+    }
+  }
+
+  .adfox-fixed__image {
+    display: block;
+  }
+
+  .adfox-fixed__cross {
+    @include cross-button(1rem);
+
+    position: absolute;
+    top: 50%;
+    right: 0.25rem;
+    z-index: 2;
+    cursor: pointer;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    transform: translateY(-50%);
+
+    &:hover {
+      filter: brightness(150%);
+    }
+  }
+
+  &.adfox-fixed--light .adfox-fixed__cross {
+    &:after, &:before {
+      background-color: darken($color-white, 5);
+    }
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+}

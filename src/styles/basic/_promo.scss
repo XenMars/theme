@@ -1,0 +1,101 @@
+.promo {
+  display: block;
+  position: relative;
+
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.375;
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  .entry-content & {
+    margin-top: 2rem;
+
+    color: $color-white;
+    background-color: $color-primary;
+
+    border-bottom: none;
+    border-radius: 3px;
+  }
+
+  &.promo--possum {
+    padding-right: 10rem;
+    overflow: hidden;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+
+    color: $color-white;
+    background: linear-gradient(to bottom, #02ace5, #0094cc);
+
+    border-radius: 8px;
+
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      height: 100%;
+      transform: translateX(50%) scale(3);
+
+      border-radius: 50%;
+
+      @media screen and (max-width: 479px) {
+        transform: translateX(50%) scale(1.5);
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 1.375rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.125rem;
+      padding-right: 6rem;
+    }
+  }
+
+  &.promo--russify {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    cursor: pointer;
+
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 15;
+
+
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+
+    font-size: .75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    color: $color-white;
+    background: linear-gradient(to bottom, #fe3801, #1c00ff,#fe3801);
+    background-size: 100% 200%;
+    background-position: 0 0;
+
+    animation: gradient 3s infinite;
+    border-radius: 1rem;
+
+    &.promo--freeze {
+      animation: none;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 1rem;
+    font-size: 1.125rem;
+  }
+}

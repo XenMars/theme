@@ -1,0 +1,78 @@
+// Setup variables
+@import "setup/variables";
+@import "setup/mixins";
+
+// Import fonts
+@import "setup/fonts";
+@import "setup/icons";
+
+// Import base styles
+@import "setup/reset";
+@import "setup/animate";
+
+body {
+  display: block;
+
+  color: $color-white;
+  background-color: $color-black;
+  line-height: 1.4;
+  font-weight: normal;
+  font-family: $font-regular;
+
+  -webkit-text-size-adjust: none;
+
+  &.is-adminbar {
+    padding-top: 32px;
+
+    @media screen and (max-width: 782px) {
+      padding-top: 46px;
+    }
+  }
+
+  &.is-login {
+    @include body-overflow;
+  }
+
+  &.is-explorer {
+    @include body-overflow;
+  }
+
+  &.is-navbar {
+    @media screen and (max-width: 1023px) {
+      @include body-overflow;
+
+      &:before {
+        content: '';
+        cursor: default;
+
+        @include full-size(4);
+        background-color: rgba($color-black, .75);
+      }
+    }
+  }
+}
+
+::placeholder {
+  color: grey;
+}
+
+// Basic element styles
+@import "basic/*.scss";
+
+// Parts components styles
+@import "parts/*.scss";
+
+// Import block layouts
+@import "block/*.scss";
+
+// Import entry styles
+@import "entry/*.scss";
+
+// Import tagline caption styles
+@import "tagline/*.scss";
+
+// Import widgets styles
+@import "widgets/*.scss";
+
+// Import adfox banners styles
+@import "adfox/*.scss";

@@ -1,0 +1,16 @@
+.sidebar {
+  display: flex;
+  flex: 0 0 19.75rem;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+
+  padding-left: 1rem;
+  color: $color-text;
+
+  @media screen and (max-width: 1023px) {
+    flex: 1 1 auto;
+
+    max-width: $width-content;
+    padding-left: 0;
+  }
+}

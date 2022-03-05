@@ -1,0 +1,156 @@
+.unit {
+  display: block;
+  position: relative;
+  z-index: 0;
+
+  width: 100%;
+  margin-top: 1rem;
+
+  .unit__head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    color: $color-white;
+  }
+
+  .unit__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+
+    background-color: $color-white;
+
+    .unit__image-thumbnail {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      transition: opacity .25s;
+
+      -webkit-backface-visibility: hidden;
+    }
+
+    @media screen and (max-width: 1023px) {
+      padding-top: 60%;
+    }
+  }
+
+  .unit__content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    background-color: $color-white;
+
+    .unit__content-link {
+      display: block;
+
+      width: 100%;
+
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.125;
+      word-wrap: break-word;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+
+        width: 100%;
+        height: 100%;
+      }
+
+      em {
+        font-family: $font-serif;
+        font-weight: 400;
+      }
+
+      @media screen and (max-width: 1023px) {
+        font-size: 1.375rem;
+        line-height: 1.25;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 1.25rem;
+      }
+
+      @media screen and (max-width: 479px) {
+        font-size: 1.125rem;
+      }
+    }
+
+    .unit__content-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+
+      margin-top: 1.5rem;
+      padding-right: 1.5rem;
+
+      color: $color-primary;
+
+      .meta--best {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .unit__inner {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    padding-top: 75%;
+
+    color: $color-text;
+
+    &:hover {
+      .unit__image-thumbnail {
+        opacity: .9;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      padding-top: 60%;
+    }
+  }
+
+  &.unit--double {
+    width: calc(50% - .5rem);
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+    }
+  }
+
+  &.unit--triple {
+    width: calc(100% / 3 - .625rem);
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+    }
+  }
+}

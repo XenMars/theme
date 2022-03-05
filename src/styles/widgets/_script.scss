@@ -1,0 +1,25 @@
+.widget-script {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: relative;
+
+  &.widget-script--sidebar {
+    flex: 20 1 auto;
+    margin-top: 1rem;
+
+    & > * {
+      @include sticky-widget;
+    }
+  }
+
+  &.widget-script--inpost {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

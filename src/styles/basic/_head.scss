@@ -1,0 +1,23 @@
+.head {
+  display: flex;
+  align-items: center;
+
+  height: calc(2rem - 1px);
+  padding: 0 1rem;
+
+  font-size: .5625rem;
+  font-weight: 500;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $color-white;
+  background-color: $color-primary;
+
+  @at-root #{selector-unify(&, a)} {
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(120%);
+    }
+  }
+}

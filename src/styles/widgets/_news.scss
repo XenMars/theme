@@ -1,0 +1,120 @@
+.widget-news {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  position: relative;
+
+  width: calc(100% - 2rem);
+  max-width: $width-site - 2rem;
+
+  margin: 0 auto;
+
+  .widget-news__wrapper {
+    display: block;
+    position: relative;
+
+    width: calc(50% - .5rem);
+    margin-top: 1rem;
+    overflow: hidden;
+
+    color: $color-text;
+    background-color: $color-white;
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 479px) {
+      margin-top: .5rem;
+    }
+  }
+
+  .widget-news__content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    z-index: 1;
+
+    height: 100%;
+    padding: 1rem;
+
+    background-color: $color-white;
+  }
+
+  .widget-news__content-link {
+    display: block;
+
+    width: 100%;
+
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.125;
+    word-wrap: break-word;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    strong {
+      color: $color-primary;
+    }
+
+    @media screen and (max-width: 1023px) {
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 1.25rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .widget-news__content-info {
+    display: block;
+
+    margin-top: 1rem;
+    color: $color-primary;
+
+    .meta {
+      font-size: .5625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+
+      a.meta__item {
+        position: relative;
+        z-index: 2;
+
+        @media screen and (max-width: 767px) {
+          &:nth-child(3):after {
+            display: none;
+          }
+
+          &:nth-child(n+4) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    max-width: $width-content;
+  }
+
+  @media screen and (max-width: 479px) {
+    width: 100%;
+    margin: .5rem auto 0;
+  }
+}
